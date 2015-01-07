@@ -1,5 +1,8 @@
 package org.demo.actions;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -7,6 +10,8 @@ import com.opensymphony.xwork2.ModelDriven;
  * <code>Set welcome message.</code>
  */
 public class HelloAction extends ActionSupport implements ModelDriven<CnInfo>{
+	
+	private final Log log = LogFactory.getLog(getClass());
 	
 	public CnInfo getModel() { 
         // TODO Auto-generated method stub 
@@ -16,6 +21,7 @@ public class HelloAction extends ActionSupport implements ModelDriven<CnInfo>{
     private CnInfo cnInfo = new CnInfo(); 
     
     public String execute() throws Exception {
+    	log.info("Log Info Test");
     	if (cnInfo.getCn() != null && !cnInfo.getCn().isEmpty()){
 	    	System.out.println("[cnInfo.getTxtcn()]:" + cnInfo.getCn());
 	    	String result = "Ok";
