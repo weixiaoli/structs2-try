@@ -1,7 +1,5 @@
 package org.demo.actions;
 
-import jp.opensquare.sandbox.cxf.jaxrs.requestor.ServiceRequestor;
-
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 
@@ -18,14 +16,14 @@ public class HelloAction extends ActionSupport implements ModelDriven<CnInfo>{
     private CnInfo cnInfo = new CnInfo(); 
     
     public String execute() throws Exception {
-    	if (cnInfo.getTxtcn() != null && !cnInfo.getTxtcn().isEmpty()){
-	    	System.out.println("[cnInfo.getTxtcn()]:" + cnInfo.getTxtcn());
-	    	String result = ServiceRequestor.doRestTest(cnInfo.getTxtcn());
+    	if (cnInfo.getCn() != null && !cnInfo.getCn().isEmpty()){
+	    	System.out.println("[cnInfo.getTxtcn()]:" + cnInfo.getCn());
+	    	String result = "Ok";
 	    	System.out.println("Result:" + result);
 	    	
-	    	cnInfo.setTxtcnresult(result);
+	    	cnInfo.setCnCheckResult(result);
     	} else {
-    		cnInfo.setTxtcnresult("Please input CN Name!");
+    		cnInfo.setCnCheckResult("Please input CN Name!");
     	}
     	//ServiceRequestor.doRestTest();
     	

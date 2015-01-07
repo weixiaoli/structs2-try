@@ -1,4 +1,4 @@
-package jp.opensquare.sandbox.cxf.jaxrs.provider;
+package org.demo.actions;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
