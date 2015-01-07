@@ -1,5 +1,7 @@
 package org.demo.actions;
 
+import javax.annotation.Resource;
+
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -13,6 +15,9 @@ public class HelloAction extends ActionSupport implements ModelDriven<CnInfo>{
 	
 	private final Log log = LogFactory.getLog(getClass());
 	
+	@Resource
+	protected CheckAction checkAction;	
+	
 	public CnInfo getModel() { 
         // TODO Auto-generated method stub 
         return cnInfo; 
@@ -22,6 +27,8 @@ public class HelloAction extends ActionSupport implements ModelDriven<CnInfo>{
     
     public String execute() throws Exception {
     	log.info("Log Info Test");
+    	checkAction.ResourceAnoTest();
+    	
     	if (cnInfo.getCn() != null && !cnInfo.getCn().isEmpty()){
 	    	System.out.println("[cnInfo.getTxtcn()]:" + cnInfo.getCn());
 	    	String result = "Ok";

@@ -1,5 +1,7 @@
 package org.demo.actions;
 
+import javax.annotation.Resource;
+
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 
@@ -25,6 +27,10 @@ public class CheckAction extends ActionSupport implements ModelDriven<CnInfo> {
         return redirectName;
     }	
 	
+    public void ResourceAnoTest() {
+        System.out.println("ResourceAnoTest Ok");
+    }    
+    
     public String execute() throws Exception {
     	
     	System.out.println("[cnInfo.getTxtcn()]:" + cnInfo.getCn());
